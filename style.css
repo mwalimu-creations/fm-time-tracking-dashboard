@@ -1,0 +1,211 @@
+:root {
+    --body-bg: hsl(226, 43%, 10%);
+    --card-bg: hsl(235, 46%, 20%);
+    --name-bg: hsl(246, 80%, 60%);
+
+    --card-border-radius: 18px;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+img {
+    display: block;
+}
+
+body {
+    display: flex;
+    flex-flow: column nowrap;
+    background-color: var(--body-bg);
+    color: #fff;
+    padding: 2rem 1.3rem;
+    font-family: "Rubik", serif;
+    height: 100vh;
+    font-weight: 300;
+    justify-content: center;
+    align-items: center;
+}
+
+main {
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-template-areas:
+        "id"
+        "work"
+        "play"
+        "study"
+        "exercise"
+        "social"
+        "self-care"
+    ;
+    gap: 1.5rem;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.profile-card,
+.report-card,
+.text-section {
+    background-color: var(--card-bg);
+    border-radius: var(--card-border-radius);
+}
+
+.profile-card {
+    grid-area: id;
+}
+
+.identification {
+    display: flex;
+    gap: 1rem;
+    padding: 1.5rem;
+    background-color: var(--name-bg);
+    border-radius: var(--card-border-radius);
+}
+
+.identification>img {
+    width: 50px;
+    height: auto;
+    border: 3px solid #fff;
+    border-radius: 50%;
+}
+
+.toggle-duration {
+    list-style-type: none;
+    display: flex;
+    justify-content: space-evenly;
+    padding: 1rem;
+    color: hsl(235, 45%, 61%);
+}
+
+.toggle-duration>li:hover {
+    cursor: pointer;
+    color: hsl(236, 100%, 87%);
+}
+
+.toggle-duration>li:active {
+    transform: scale(1.1);
+}
+
+.selected {
+    color: hsl(236, 100%, 87%);
+}
+
+.report-card {
+
+    padding-top: 2rem;
+    background-repeat: no-repeat;
+    background-position: top right;
+    display: flex;
+    justify-content: end;
+}
+
+.work-card {
+    background-color: hsl(15, 100%, 70%);
+    background-image: url(./images/icon-work.svg);
+    grid-area: work;
+}
+
+.play-card {
+    background-color: hsl(195, 74%, 62%);
+    background-image: url(./images/icon-play.svg);
+    grid-area: play;
+}
+
+.study-card {
+    background-color: hsl(348, 100%, 68%);
+    background-image: url(./images/icon-study.svg);
+    grid-area: study;
+}
+
+.exercise-card {
+    background-color: hsl(145, 58%, 55%);
+    background-image: url(./images/icon-exercise.svg);
+    grid-area: exercise;
+}
+
+.social-card {
+    background-color: hsl(264, 64%, 52%);
+    background-image: url(./images/icon-social.svg);
+    grid-area: social;
+}
+
+.self-care-card {
+    background-color: hsl(43, 84%, 65%);
+    background-image: url(./images/icon-self-care.svg);
+    grid-area: self-care;
+}
+
+.text-section {
+    display: grid;
+    grid-template-areas:
+        "cardTitle ellipses"
+        "current previous";
+    align-items: center;
+    padding: 1.5rem;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: auto;
+
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: 400;
+    grid-area: cardTitle;
+}
+
+.current {
+    font-size: 1.5rem;
+    grid-area: current;
+}
+
+.ellipses {
+    grid-area: ellipses;
+    margin-left: auto;
+}
+
+.previous {
+    grid-area: previous;
+}
+
+.attribution {
+    margin-top: 1.5rem;
+    font-size: 11px;
+    text-align: center;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
+
+@media (min-width:1024px) {
+    main {
+        grid-template-areas:
+            "id work play study"
+            "id exercise social self-care";
+    }
+
+    .toggle-duration {
+        flex-flow: column nowrap;
+        gap: 1rem;
+    }
+
+
+    .identification {
+        flex-flow: column nowrap;
+        padding: 3rem 1.5rem;
+    }
+
+    .text-section {
+        grid-template-areas:
+            "cardTitle ellipses"
+            "current current"
+            "previous previous";
+    }
+
+
+}
