@@ -1,6 +1,6 @@
 const reportCard = document.querySelectorAll('.text-section')
 console.log()
-const toggleDurationSelectors = document.querySelectorAll('#selector'); 
+const toggleDurationSelectors = document.querySelectorAll('.selector'); 
 let cardContent = [];
 const cardTitles = document.querySelectorAll('.card-title')
 let selectedToggle = document.querySelector('.selected')
